@@ -1,13 +1,25 @@
 
-### QUICK-START SETUP 
+### Setup Quick Start
 
-**1. Clone this repository**
+1. Clone this Repository
+2. Create the .env file 
+3. Install Packages with yarn
+4. Set up the Database
+5. Run medusa seed & migrations
+6. Run the Server
+7. Run the Client
+
+
+**1. Clone this Repository**
+
 
 **2. Create the .env file in both the project root, and in ./hamza-server**
 
+
 See .env.example. 
 
-**3. Install packages with yarn**
+**3. Install Packages with yarn**
+
 
 ```
 cd ./hamza-server
@@ -16,23 +28,15 @@ cd ../hamza-client
 yarn install 
 ```
 
-**4. Install the medusa cli**
+
+**4. Install the Medusa cli**
 
 ```
 yarn global add @medusajs/medusa-cli
 ```
 
-**5. Install postgresql, docker engine, and docker-compose**
 
-Installation may depend on your system, here is an example using apt-get on ubuntu, but please don't take this as the one single correct way to do this, just a general guide: 
-```
-sudo apt-get update 
-sudo apt-get install postgresql
-...
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose 
-```
-
-**6. Set up the Database**
+**4. Set up the Database**
 
 Either do it by docker, or install postgresql manually on your local environment, and create an empty database call "hamza_dev_db". 
 
@@ -43,7 +47,8 @@ If doing it by docker, in the root of the repo:
 sudo docker-compose up -d
 ```
 
-**7. Run medusa seed & migrations** 
+
+**5. Run medusa seed & migrations** 
 
 ```
 cd ./hamza-server
@@ -51,17 +56,19 @@ npx medusa seed --seed-file=data/seed.json
 npx medusa migrations run
 ```
 
-**8. Set the admin email & password** 
+
+**6. Run the Server** 
 
 ```
 cd ./hamza-server
-npx medusa user --email admin@medusa-test.com --password supersecret
+yarn dev
 ```
 
-**9. Run the server** 
+
+**7. Run the Client** 
 
 ```
-cd ./hamza-server
+cd ./hamza-client
 yarn dev
 ```
 
