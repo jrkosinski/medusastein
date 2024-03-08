@@ -2,12 +2,13 @@
 ### Setup Quick Start
 
 1. Clone this Repository
-2. Create the .env file 
+2. Create the .env files 
 3. Install Packages with yarn
-4. Set up the Database
-5. Run medusa seed & migrations
-6. Run the Server
-7. Run the Client
+4. Install the Medusa CLI
+5. Set up the Database
+6. Run medusa seed & migrations
+7. Run the Server
+8. Run the Client
 
 
 **1. Clone this Repository**
@@ -31,14 +32,14 @@ yarn install
 ```
 
 
-**4. Install the Medusa cli**
+**4. Install the Medusa CLI**
 
 ```
 yarn global add @medusajs/medusa-cli
 ```
 
 
-**4. Set up the Database**
+**5. Set up the Database**
 
 Either do it by docker, or install postgresql manually on your local environment, and create an empty database call "hamza_dev_db". 
 
@@ -50,7 +51,7 @@ sudo docker-compose up -d
 ```
 
 
-**5. Run medusa seed & migrations** 
+**6. Run medusa seed & migrations** 
 
 ```
 cd ./hamza-server
@@ -59,7 +60,7 @@ npx medusa migrations run
 ```
 
 
-**6. Run the Server** 
+**7. Run the Server** 
 
 ```
 cd ./hamza-server
@@ -67,7 +68,7 @@ yarn dev
 ```
 
 
-**7. Run the Client** 
+**8. Run the Client** 
 
 ```
 cd ./hamza-client
