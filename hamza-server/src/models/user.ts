@@ -18,4 +18,8 @@ export class User extends MedusaUser {
   @ManyToOne(() => Store, (store) => store.members)
   @JoinColumn({ name: "store_id", referencedColumnName: "id"})
   store?: Store;
+
+  wallet_address: string;
+  email?: string;
+  password_hash?: string;
 }

@@ -36,7 +36,5 @@ export default class CustomerService extends MedusaCustomerService {
     }
     // lets add a try catch for actually creating a customer?
   }
-
-
 }
 
