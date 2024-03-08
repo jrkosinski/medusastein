@@ -1,3 +1,70 @@
+
+### QUICK-START SETUP 
+
+**1. Clone this repository**
+
+**2. Create the .env file in both the project root, and in ./hamza-server**
+
+See .env.example. 
+
+**3. Install packages with yarn**
+
+```
+cd ./hamza-server
+yarn install
+cd ../hamza-client
+yarn install 
+```
+
+**4. Install the medusa cli**
+
+```
+yarn global add @medusajs/medusa-cli
+```
+
+**5. Install postgresql, docker engine, and docker-compose**
+
+Installation may depend on your system, here is an example using apt-get on ubuntu, but please don't take this as the one single correct way to do this, just a general guide: 
+```
+sudo apt-get update 
+sudo apt-get install postgresql
+...
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose 
+```
+
+**6. Set up the Database**
+
+Either do it by docker, or install postgresql manually on your local environment, and create an empty database call "hamza_dev_db". 
+
+If doing it by docker, in the root of the repo: 
+(sudo is optional depending on your setup) 
+
+```
+sudo docker-compose up -d
+```
+
+**7. Run medusa seed & migrations** 
+
+```
+cd ./hamza-server
+npx medusa seed --seed-file=data/seed.json 
+npx medusa migrations run
+```
+
+**8. Set the admin email & password** 
+
+```
+cd ./hamza-server
+npx medusa user --email admin@medusa-test.com --password supersecret
+```
+
+**9. Run the server** 
+
+```
+cd ./hamza-server
+yarn dev
+```
+
 To setup the project I went through the following guide: https://docs.medusajs.com/create-medusa-app
 
 Running: `npx create-medusa-app@latest`
