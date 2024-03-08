@@ -1,5 +1,7 @@
-import type { MiddlewaresConfig, User, UserService } from "@medusajs/medusa";
 import type {
+  MiddlewaresConfig,
+  User,
+  UserService,
   MedusaNextFunction,
   MedusaRequest,
   MedusaResponse,
