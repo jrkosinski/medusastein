@@ -18,6 +18,10 @@ medusa-db.sql
 build
 .cache
 
+#lock files
+yarn.lock
+package-lock.json
+
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
