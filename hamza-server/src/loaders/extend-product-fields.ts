@@ -1,4 +1,5 @@
-export default async function () {
+/* 
+ * export default async function () {
   const imports = (await import(
     "@medusajs/medusa/dist/api/routes/store/products/index"
   )) as any;
@@ -11,3 +12,4 @@ export default async function () {
     "customAttribute",
   ];
 }
+*/
