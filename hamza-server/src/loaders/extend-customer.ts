@@ -1,5 +1,6 @@
 // https://docs.medusajs.com/development/loaders/create
 
+/*
 import { allowedStoreCustomersFields } from "@medusajs/medusa/dist/api/routes/store/customers";
 
 export default async function () {
@@ -15,3 +16,4 @@ export default async function () {
     "customAttribute",
   ];
 }
+*/

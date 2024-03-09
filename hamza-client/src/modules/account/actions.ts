@@ -54,6 +54,8 @@ export async function logCustomerIn(
   const wallet_address = formData.get("wallet_address") as string
 
   try {
+    console.log("attemepting to log in with wallet address: ", wallet_address)
+
     await getToken({ email, password, wallet_address }).then(() => {
       revalidateTag("customer")
     })
