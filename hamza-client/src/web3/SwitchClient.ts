@@ -3,7 +3,7 @@ import { BigNumberish, ethers } from "ethers";
 /**
  * Input params to a single payment to the Switch.
  */
-interface IPaymentInput {
+export interface IPaymentInput {
     payer: string; 
     receiver: string; 
     id: BigNumberish; 
@@ -14,14 +14,14 @@ interface IPaymentInput {
  * Input params to a payment to the Switch, plus a property indicating the currency
  * in which the payment is being made.
  */
-interface IPaymentInputCurrency extends IPaymentInput {
+export interface IPaymentInputCurrency extends IPaymentInput {
     currency: string; //token address, or ethers.ZeroAddress for native 
 }
 
 /**
  * Input params for multiple concurrent payments to the switch. 
  */
-interface IMultiPaymentInput {
+export interface IMultiPaymentInput {
     receiver: string; 
     currency: string; //token address, or ethers.ZeroAddress for native 
     payments: IPaymentInput[];
@@ -35,6 +35,10 @@ export class SwitchClient {
     paymentSwitch: ethers.Contract;
     tokens: { [id: string]: ethers.Contract } = {};
     
+    /**
+     * Constructor.
+     * @param address Address of the PaymentSwitch contract
+     */
     constructor(address: string) {
         this.contractAddress = address;
         this.paymentSwitch = new ethers.Contract(this.contractAddress, [], null);
